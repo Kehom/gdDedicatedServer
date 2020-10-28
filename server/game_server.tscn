@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://shared/game.tscn" type="PackedScene" id=1]
+[ext_resource path="res://server/game_server.gd" type="Script" id=2]
+
+[node name="game_center" type="Node"]
+script = ExtResource( 2 )
+
+[node name="ui" type="CanvasLayer" parent="."]
+
+[node name="panel" type="Panel" parent="ui"]
+anchor_bottom = 1.0
+margin_right = 208.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bt_quit" type="Button" parent="ui/panel"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 96.0
+margin_bottom = 36.0
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bt_close" type="Button" parent="ui/panel"]
+margin_left = 112.0
+margin_top = 16.0
+margin_right = 192.0
+margin_bottom = 36.0
+text = "Close"
+
+[node name="scroll" type="ScrollContainer" parent="ui/panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 48.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="vbox" type="VBoxContainer" parent="ui/panel/scroll"]
+margin_right = 176.0
+margin_bottom = 536.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="game" parent="." instance=ExtResource( 1 )]
+[connection signal="pressed" from="ui/panel/bt_quit" to="." method="_on_bt_quit_pressed"]
+[connection signal="pressed" from="ui/panel/bt_close" to="." method="_on_bt_close_pressed"]

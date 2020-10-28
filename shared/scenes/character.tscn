@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://shared/scripts/kinematicbase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://shared/scenes/character.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleMesh" id=1]
+
+[sub_resource type="CapsuleShape" id=2]
+
+[node name="character" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+mesh = SubResource( 1 )
+
+[node name="visual" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+
+[node name="collision" type="CollisionShape" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="camera_pos" type="Position3D" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 3.7, 5.2 )

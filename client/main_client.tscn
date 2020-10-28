@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://client/main_client.gd" type="Script" id=1]
+
+[node name="main_menu" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ui" type="CanvasLayer" parent="."]
+
+[node name="panel" type="Panel" parent="ui"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -96.0
+margin_top = -56.0
+margin_right = 96.0
+margin_bottom = 56.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbl_ip" type="Label" parent="ui/panel"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 32.0
+margin_bottom = 40.0
+text = "IP"
+valign = 1
+
+[node name="txt_ip" type="LineEdit" parent="ui/panel"]
+margin_left = 72.0
+margin_top = 16.0
+margin_right = 176.0
+margin_bottom = 40.0
+text = "127.0.0.1"
+
+[node name="lbl_port" type="Label" parent="ui/panel"]
+margin_left = 16.0
+margin_top = 48.0
+margin_right = 56.0
+margin_bottom = 72.0
+text = "Port"
+valign = 1
+
+[node name="txt_port" type="LineEdit" parent="ui/panel"]
+margin_left = 72.0
+margin_top = 48.0
+margin_right = 130.0
+margin_bottom = 72.0
+text = "1234"
+
+[node name="bt_join" type="Button" parent="ui/panel"]
+margin_left = 56.0
+margin_top = 80.0
+margin_right = 136.0
+margin_bottom = 100.0
+text = "Join"
+
+[node name="err_dialog" type="AcceptDialog" parent="ui"]
+margin_right = 83.0
+margin_bottom = 58.0
+popup_exclusive = true
+dialog_text = "Failed to connect to server."
+[connection signal="pressed" from="ui/panel/bt_join" to="." method="_on_bt_join_pressed"]

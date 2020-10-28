@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://server/main_server.gd" type="Script" id=1]
+
+[node name="main_menu" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ui" type="CanvasLayer" parent="."]
+
+[node name="panel" type="Panel" parent="ui"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -92.0
+margin_top = -60.0
+margin_right = 92.0
+margin_bottom = 60.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bt_start" type="Button" parent="ui/panel"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 168.0
+margin_bottom = 36.0
+text = "Start Server"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbl_port" type="Label" parent="ui/panel"]
+margin_left = 16.0
+margin_top = 48.0
+margin_right = 42.0
+margin_bottom = 72.0
+text = "Port"
+valign = 1
+
+[node name="txt_port" type="LineEdit" parent="ui/panel"]
+margin_left = 112.0
+margin_top = 48.0
+margin_right = 170.0
+margin_bottom = 72.0
+text = "1234"
+
+[node name="lbl_maxplayers" type="Label" parent="ui/panel"]
+margin_left = 16.0
+margin_top = 80.0
+margin_right = 92.0
+margin_bottom = 104.0
+text = "Max Players"
+valign = 1
+
+[node name="txt_maxplayers" type="LineEdit" parent="ui/panel"]
+margin_left = 112.0
+margin_top = 80.0
+margin_right = 170.0
+margin_bottom = 104.0
+text = "6"
+
+[node name="err_dialog" type="AcceptDialog" parent="ui"]
+margin_right = 83.0
+margin_bottom = 58.0
+popup_exclusive = true
+dialog_text = "Failed to create server"
+[connection signal="pressed" from="ui/panel/bt_start" to="." method="_on_bt_start_pressed"]
