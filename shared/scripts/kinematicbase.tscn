@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://shared/scripts/kinematicbase.gd" type="Script" id=1]
-
-[node name="KinematicBase" type="KinematicBody"]
-script = ExtResource( 1 )
-
-[node name="visual" type="Spatial" parent="."]

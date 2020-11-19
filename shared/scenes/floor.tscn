@@ -1,20 +1,22 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://shared/scripts/staticbase.gd" type="Script" id=1]
+[ext_resource path="res://shared/scripts/netmeshinstance.gd" type="Script" id=1]
 
-[sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 0.0627451, 0.32549, 0.105882, 1 )
-
-[sub_resource type="CubeMesh" id=2]
-material = SubResource( 1 )
-size = Vector3( 10, 0.2, 10 )
-
-[sub_resource type="BoxShape" id=3]
+[sub_resource type="BoxShape" id=1]
 extents = Vector3( 5, 0.1, 5 )
 
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.0784314, 0.45098, 0.0745098, 1 )
+
+[sub_resource type="CubeMesh" id=3]
+material = SubResource( 2 )
+size = Vector3( 10, 0.2, 10 )
+
 [node name="floor" type="StaticBody"]
-script = ExtResource( 1 )
-mesh = SubResource( 2 )
 
 [node name="collision" type="CollisionShape" parent="."]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
+
+[node name="mesh" type="Spatial" parent="."]
+script = ExtResource( 1 )
+mesh = SubResource( 3 )

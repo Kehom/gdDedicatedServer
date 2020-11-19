@@ -49,8 +49,8 @@ func _on_player_added(pid: int) -> void:
 	# Attach it into the vbox
 	$ui/panel/scroll/vbox.add_child(uielement)
 	
-	# Sawpn the character node
-	var cnode: KinematicBase = loader.network.snapshot_data.spawn_node(SnapCharacter, pid, 0)
+	# Spawn the character node
+	var cnode: KinematicBody = loader.network.snapshot_data.spawn_node(SnapCharacter, pid, 0)
 	# Obtain the index of the spawn point
 	var index: int = loader.network.player_data.get_player_count() - 1
 	# Place the character at the spawn point

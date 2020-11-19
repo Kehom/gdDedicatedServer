@@ -24,11 +24,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/keh_network/inputdata.gd"
 }, {
-"base": "KinematicBody",
-"class": "KinematicBase",
-"language": "GDScript",
-"path": "res://shared/scripts/kinematicbase.gd"
-}, {
 "base": "Reference",
 "class": "NetCustomProperty",
 "language": "GDScript",
@@ -48,6 +43,11 @@ _global_script_classes=[ {
 "class": "NetInputInfo",
 "language": "GDScript",
 "path": "res://addons/keh_network/inputinfo.gd"
+}, {
+"base": "Spatial",
+"class": "NetMeshInstance",
+"language": "GDScript",
+"path": "res://shared/scripts/netmeshinstance.gd"
 }, {
 "base": "Reference",
 "class": "NetNodeSpawner",
@@ -98,21 +98,16 @@ _global_script_classes=[ {
 "class": "SnapEntityBase",
 "language": "GDScript",
 "path": "res://addons/keh_network/snapentity.gd"
-}, {
-"base": "StaticBody",
-"class": "StaticBase",
-"language": "GDScript",
-"path": "res://shared/scripts/staticbase.gd"
 } ]
 _global_script_class_icons={
 "EncDecBuffer": "",
 "EntityInfo": "",
 "InputData": "",
-"KinematicBase": "",
 "NetCustomProperty": "",
 "NetDefaultSpawner": "",
 "NetEventInfo": "",
 "NetInputInfo": "",
+"NetMeshInstance": "",
 "NetNodeSpawner": "",
 "NetPingInfo": "",
 "NetPlayerData": "",
@@ -122,8 +117,7 @@ _global_script_class_icons={
 "Network": "",
 "Quantize": "",
 "SnapCharacter": "",
-"SnapEntityBase": "",
-"StaticBase": ""
+"SnapEntityBase": ""
 }
 
 [application]

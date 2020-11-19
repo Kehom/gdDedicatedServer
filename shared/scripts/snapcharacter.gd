@@ -13,7 +13,7 @@ func _init(id: int, chash: int = 0).(id, chash) -> void:
 	vert_velocity = 0
 
 func apply_state(n: Node) -> void:
-	if (n is KinematicBase && n.has_method("apply_state")):
+	if (n is KinematicBody && n.has_method("apply_state")):
 		n.apply_state({
 			"position": position,
 			"orientation": orientation,

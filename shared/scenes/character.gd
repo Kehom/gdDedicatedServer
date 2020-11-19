@@ -1,7 +1,7 @@
 # This script is reference material to a written tutorial found on my web page (http://kehomsforge.com)
 
 tool
-extends KinematicBase
+extends KinematicBody
 
 # Gravity constant
 const GRAVITY: float = 9.81
@@ -33,13 +33,13 @@ func _ready() -> void:
 	if (has_meta("uid")):
 		_uid = get_meta("uid")
 	
-	if (loader.network.is_id_local(_uid)):
+#	if (loader.network.is_id_local(_uid)):
 		# Create the camera
-		var cam: Camera = Camera.new()
+#		var cam: Camera = Camera.new()
 		# Attach to the node hierarchy
-		$camera_pos.add_child(cam)
+#		$camera_pos.add_child(cam)
 		# Ensure it is the active one
-		cam.current = true
+#		cam.current = true
 
 func _physics_process(dt: float) -> void:
 	# Check if there is any correction to be done
