@@ -16,12 +16,14 @@ func _ready() -> void:
 		_mesh_node.mesh = mesh         # Probably not necessary but it should be no harm in doing so
 
 
-func _exit_tree() -> void:
+# It is actually "harmful" to cleanup the mesh node here. What happens is that, in the editor, when the scene tab is
+# used to switch back and forth, the mesh node will not be rebuilt.
+#func _exit_tree() -> void:
 	# This is probably not entirely necessary because _mesh_node is owned by this node and will be deleted
 	# But still, this cleanup is harmless
-	if (_mesh_node):
-		_mesh_node.queue_free()
-		_mesh_node = null
+#	if (_mesh_node):
+#		_mesh_node.queue_free()
+#		_mesh_node = null
 
 func set_mesh(m: Mesh) -> void:
 	mesh = m

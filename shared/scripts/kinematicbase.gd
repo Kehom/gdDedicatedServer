@@ -16,10 +16,12 @@ func _ready() -> void:
 		$visual.add_child(_mesh_node)
 
 
-func _exit_tree() -> void:
-	if (_mesh_node):
-		_mesh_node.queue_free()
-		_mesh_node = null
+# It is actually "harmful" to cleanup the mesh node here. What happens is that, in the editor, when the scene tab is
+# used to switch back and forth, the mesh node will not be rebuilt.
+#func _exit_tree() -> void:
+#	if (_mesh_node):
+#		_mesh_node.queue_free()
+#		_mesh_node = null
 
 
 func set_mesh(m: Mesh) -> void:
